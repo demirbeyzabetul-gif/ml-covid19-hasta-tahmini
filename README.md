@@ -25,8 +25,13 @@ Kodları çalıştırdığımda çıkan gerçek rakamlar şu şekilde oldu:
 | **KNN** | %59.1 | 0.61 | 0.66 |
 | **Decision Tree** | %58.8 | 0.61 | 0.61 |
 
-### Sonuç ve Yorumlar
-Hocanın PDF notlarında tıp konusundaki tahminlerde en tehlikeli hatanın hastayı "sağlıklı" sanıp kaçırmak (Yanlış Negatif) olduğu yazıyordu. Bu yüzden ben en çok **Recall** (duyarlılık) değerine baktım. Testlerimde Logistic Regression hem genel başarıda hem de %74 Recall ile en mantıklı sonucu verdi.
+### Modellerin Analizi ve Karşılaştırma
+Veri setini temizleyip modelleri eğittiğimde, Logistic Regression algoritmasının diğerlerinden daha tutarlı sonuçlar verdiğini gördüm. Accuracy bazında %63.2 ile en yüksek başarıyı bu model sağladı. Karar ağaçları (Decision Tree) ve Random Forest modelleri bu veri setinde beklediğimden biraz daha düşük performans gösterdi.
+
+### Sonuç
+Bu çalışmada benim için en önemli kriter **Recall** (Duyarlılık) değeriydi. Çünkü tıp ile ilgili bir konuda, hasta olan birine yanlışlıkla "sağlıklı" demek (Yanlış Negatif hatası) çok riskli bir durum. Bu yüzden Accuracy değerinin yanında Recall değerine de baktım.
+
+Logistic Regression modeli %74 Recall başarısı göstererek, hasta olan kişileri tespit etme konusunda denediğim diğer 3 algoritmanın önüne geçti. Hem genel doğruluğu hem de hastaları yakalama kapasitesi bakımından bu veri seti için en mantıklı çözümün Logistic Regression olduğuna karar verdim.
 
 ### Kodlar Nasıl Çalıştırılır?
 Repodaki .ipynb dosyasını indirip Google Colab'a yükledikten sonra veri setini de içine atınca bütün hücreler sırayla çalışıyor.
